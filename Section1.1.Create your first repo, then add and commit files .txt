@@ -1,3 +1,4 @@
+SECTION 1.1:
 Để check xem git đã được cài đặt chưa:
 	->All OS:
 		git --version
@@ -16,4 +17,22 @@ git add <file/directory name #1> <file/directory name #2> ...
 	+ add toàn bộ files vào trạng thái staged
 git commit -m"Initial commit"
 	+Create a new commit with the given message. A commit is like a save or snapshot of your entire project. You can now push, or upload, it to a remote repo, and later you can jump back to it if necessary.
+git remote add origin https://<your-git-service-address>/owner/repository.git
+	+ Để liên kết local repository với 1 remote repo
+	+ Chú ý tạo git init trước khi remote
 	
+
+Khi khởi tạo 1 repo trên github(github recommend):
+…or create a new repository on the command line
+	echo "# GoalKicker_Git" >> README.md
+	git init
+	git add README.md
+	git commit -m "first commit"
+	git branch -M master
+	git remote add origin git@github.com:nermadie/GoalKicker_Git.git
+	git push -u origin master
+…or push an existing repository from the command line
+	git remote add origin git@github.com:nermadie/GoalKicker_Git.git
+	git branch -M master
+	git push -u origin master
+	== git push --set-upstream origin master

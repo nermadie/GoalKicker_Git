@@ -1,0 +1,17 @@
+SECTION 1.2:
+**How to open Window Terminal fast in XYplorer: Ctrl+Alt+P
+git clone 
+	+ Dùng để copy 1 Git repository đã tồn tại trên server về local machine
+	VD:
+		cd <path where you would like the clone to create a directory>
+		git clone https://github.com/username/projectname.git
+	+ Khi clone về mà muốn đặt 1 cái tên khác thì có thể dùng:
+		git clone https://github.com/username/projectname.git MyFolder
+		--> thư mục clone về sẽ có tên là MyFolder
+	
+	Note:
+		1. Khi mà clone vào 1 thư mục thì phải đảm bảo rằng thư mục đó trống hoặc không tồn tại
+		2. You can also use the ssh version of the command:
+			git clone git@github.com:username/projectname.git
+		The https version and the ssh version are equivalent. However, some hosting services such as GitHub rcm that you use https rather than ssh.
+

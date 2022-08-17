@@ -1,0 +1,11 @@
+SECTION 1.3:
+
+On the remote server:
+	git init --bare /path/to/repo.git
+On the local machine:
+	git remote add origin ssh://username@server:/path/to/repo.git
+(Note that ssh: is just one possible way of accessing the remote repository.)
+
+git push --set-upstream origin master
+== git push -u origin master
+	+ Adding --set-upstream (or -u) created an upstream (tracking) reference which is used by argument-less Git commands, e.g. git pull.

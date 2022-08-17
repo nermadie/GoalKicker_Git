@@ -1,0 +1,19 @@
+Để check xem git đã được cài đặt chưa:
+	->All OS:
+		git --version
+	->OS base on UNIX:
+		which git
+
+git init
+	+ Create an empty Git repo
+git status
+	+ check what files Git will add to your new repo
+	+ Xem lại những files nào nên để cho git track, files nào nên để như bth
+git add <file/directory name #1> <file/directory name #2> ...
+	+ Khai báo cho git là files nào cần phải đặt vào version control
+	+ Đưa files từ trạng thái modified deleted untracked sang trạng thái staged
+	--> git add .
+	+ add toàn bộ files vào trạng thái staged
+git commit -m"Initial commit"
+	+Create a new commit with the given message. A commit is like a save or snapshot of your entire project. You can now push, or upload, it to a remote repo, and later you can jump back to it if necessary.
+	

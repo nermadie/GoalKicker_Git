@@ -1,0 +1,15 @@
+SECTION 1.5:
+
+If you have cloned a fork you may not have push access to the upstream repo, so you need both your fork but be able to fetch the upstream repo
+Check remote name:
+	+ git remote -v
+	origin https://github.com/myusername/repo.git (fetch)
+	origin https://github.com/myusername/repo.git (push)
+	upstream # this line may or may not be here
+
+Nếu upstream đã có sẵn (Ở 1 số git versions) thì ta set the URL (currently ít's empty):
+	git remote set-url upstream https://github.com/projectusername/repo.git
+
+Nếu chưa có upstream, hoặc nếu bạn muốn add một fork (currently they do not exist):
+	git remote add upstream https://github.com/projectusername/repo.git
+	git remote add dave https://github.com/dave/repo.git

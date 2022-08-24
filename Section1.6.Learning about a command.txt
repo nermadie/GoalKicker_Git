@@ -1,0 +1,16 @@
+SECTION 1.6:
+
+Để hiển thị chi tiết về command, available options and other documentation use the --help
+
+For example, to get all available information about the git diff command, use:
+
+	git diff --help
+	git help diff
+
+Similarly, to get all available information about the status command, use:
+	git status --help
+	git help status
+	
+Nếu chỉ cần help ngắn gọn thì dùng -h
+	git checkout -h
+	

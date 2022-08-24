@@ -1,0 +1,29 @@
+SECTION 1.4:
+
+Bạn phải thiết lập bạn sử dụng tài khoản nào trước khi tạo commit. Nó sẽ cho cho biết commit đó thuộc về ai
+
+Lưu ý: việc xác thực này chỉ nằm ở local và chưa liên quan đến authen khi push lên remote (thực ra là vẫn có nếu sử dụng 2 tài khoản trên cùng 1 máy)
+
+To declare that identity for all repositories, use git config --global
+
+This will store the setting in your user's .gitconfig file: e.g. $HOME/.gitconfig or for Windows, %USERPROFILE%\.gitconfig.
+
+	git config --global user.name "Your Name"
+	git config --global user.email mail@example.com
+
+Để khai báo identity cho repo riêng lẻ, dùng git config bên trong repo đó. This will store the setting inside the individual repository, in the file $GIT_DIR/config. e.g. /path/to/your/repo/.git/config.
+
+	git config user.name "Your login at work"
+	git config user.email mail@example.com
+	
+git config ở local repo sẽ ưu tiên hơn config global
+
+Tips: Nếu bạn có nhiều tài khoản và không muốn quên setup lại tài khoản cho từng repo (vì đã setup global sẵn rồi) thì có thể:
+	- Remove a global identity:
+		git config --global --remove-section user.name
+		git config --global --remove-section user.email
+	- (Version>=2.8) Ép git phải lấy identity bên trong repo's settings, mà không phải global config:
+		git config --global user.useConfigOnly true
+		--> Khi sử dụng cách này thì nếu mà bạn chưa setup name và email thì sẽ nhận được cảnh báo:
+			no name was given and auto-detection is disabled
+			no email was given and auto-detection is disabled

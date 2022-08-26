@@ -1,0 +1,9 @@
+SECTION 2.1:
+
+git log
+
+sẽ hiển thị tất cả commit của bạn trên nhánh HEAD trỏ tới với người commit và mã hash của nó. Nó sẽ hiển thị trên nhiều dòng và có thể sử dụng q để exit the log.
+
+Nếu muốn hiển thị n commit gần nhất trên nhành HEAD trỏ tới:
+	git log -n
+	VD: git log -2

@@ -1,0 +1,34 @@
+SECTION 1.7:
+SSH KEY
+
+Sử dụng Git Bash trên Windows
+		Terminal trên Mac/Linux
+Trước khi tạo SSH Key, Check xem đã có SSH keys chưa
+List the contents of your ~/.ssh directory:
+	ls -al ~/.ssh
+	# Lists all the files in your ~/.ssh directory
+	
+Check the directory listing to see if you already have a public SSH key. By default the filenames of the public keys are one of the following:
+	id_dsa.pub
+	id_ecdsa.pub
+	id_ed25519.pub
+	id_rsa.pub
+
+Nếu đã có cặp public và private key mà bạn muốn dùng trên tài khoản Github, Bitbucket(or similar) bạn có thể copy contents trong file id_*.pub
+
+Nếu chưa có thì có thể generate cặp khoá public và private thông qua câu lệnh:
+	ssh-keygen
+Nhấn Enter/Return để accept the default location. Có thể nhập hoặc để trống thông tin.
+
+Đảm bảo rằng SSH key đã được thêm vào ssh-agent. Start the ssh-agent in the background if it's not already running:
+	eval "$(ssh-agent -s)"
+
+Thêm ssh-key vào ssh-agent:
+	ssh-ađ ~/.ssh/<file rsa private>
+
+Change the upstream:
+	git remote set-url origin ssh://git@bitbucket.server.com:7999/projects/your_project.git
+	
+Clone by SSH:
+	git clone ssh://git@bitbucket.server.com:7999/projects/your_project.git
+	

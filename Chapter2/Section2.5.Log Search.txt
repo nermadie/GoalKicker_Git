@@ -1,0 +1,32 @@
+SECTION 2.5:
+
+Để tìm kiếm trong git (tìm kiếm diff - những thay đổi đã lưu lại). Sử dụng:
+	+Đối với "addition" / "removal" của 1 string mà matching vs string được đưa vào:
+		git log -S"string"
+		VD: git log -S"#define SAMPLES"
+	+Đối với changes của 1 line chứa string được đưa vào:
+		git log -G"string"
+		VD: git log -G"string"
+		
+
+Reference in git-scm:
+-S<string>
+Look for differences that change the number of occurrences of the specified string (i.e. addition/deletion) in a file. Intended for the scripter’s use.
+
+It is useful when you’re looking for an exact block of code (like a struct), and want to know the history of that block since it first came into being: use the feature iteratively to feed the interesting block in the preimage back into -S, and keep going until you get the very first version of the block.
+
+Binary files are searched as well.
+
+-G<regex>
+Look for differences whose patch text contains added/removed lines that match <regex>.
+
+To illustrate the difference between -S<regex> --pickaxe-regex and -G<regex>, consider a commit with the following diff in the same file:
+
++    return frotz(nitfol, two->ptr, 1, 0);
+...
+-    hit = frotz(nitfol, mf2.ptr, 1, 0);
+While git log -G"frotz\(nitfol" will show this commit, git log -S"frotz\(nitfol" --pickaxe-regex will not (because the number of occurrences of that string did not change).
+
+Unless --text is supplied patches of binary files without a textconv filter will be ignored.
+
+See the pickaxe entry in gitdiffcore[7] for more information.

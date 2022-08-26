@@ -1,0 +1,15 @@
+SECTION 2.3:
+
+Có thể thay đổi màu sắc cho log:
+	git log --graph --pretty=format:'%C(red)%h%Creset -%C(yellow)%d%Creset %s %C(green)(%cr) %C(yellow)<%an>%Creset'
+	
+Có thể sử dụng git alias để gán câu lệnh cho nhanh.
+The format option allows you to specify your own log output format:
+Parameter 								Details
+%C(color_name) 			option colors the output that comes after it
+%h or %H 				abbreviates commit hash (use %H for complete hash)
+%Creset 				resets color to default terminal color
+%d 						ref names
+%s 						subject [commit message]
+%cr 					committer date, relative to current date
+%an 					author name

@@ -1,0 +1,11 @@
+SECTION 2.7:
+
+Tìm kiếm commit bằng message của commit:
+	git log [option] --grep "search_string"
+	VD: git log --all --grep "removed file"
+	--> Những commit có message có chứa removed file sẽ được liệt kê
+	
+Tìm kiếm commit mà message không chứa string:
+	+ Từ phiên bản 2.4+, git cho phép sử dụng --invert-grep:
+		git log --grep="add file" --invert-grep
+		--> git sẽ liệt kê ra những commit mà không có chứa "add file" trong message

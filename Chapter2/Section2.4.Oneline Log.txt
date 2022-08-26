@@ -1,0 +1,7 @@
+SECTION 2.4:
+
+git log --oneline
+Each commit will show in a single line
+
+Nếu muốn hiển thị chỉ n commit gần nhất:
+	VD: git log -2 --oneline

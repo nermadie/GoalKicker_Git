@@ -1,0 +1,15 @@
+SECTION 2.2:
+
+Để xem log bằng đồ thị đẹp hơn
+	git log --decorate --oneline --graph
+
+Vì nó là 1 lệnh dài nên có thể gán alias:
+	git config  --global alias.lol "log --decorate --oneline --graph"
+	
+	Sử dụng:
+		# history of current branch
+		git lol
+		# combined history of active branch (HEAD), develop and origin/master branches:
+		git lol HEAD develop origin/master
+		# combined history of everything in your repo:
+		git lol --all

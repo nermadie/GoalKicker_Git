@@ -1,0 +1,11 @@
+CHAPTER 4: STAGING
+SESSION 4.1:
+
+Để thêm file vào trong trạng thái staged:
+	git add
+	+ Thêm toàn bộ các file:
+		git add -A 
+		git add --all
+		git add .
+	
+*In version 2.x thì git add . sẽ giống như git add -A tuy nhiên với phiên bản 1.x thì sẽ chỉ stage file mới và modified files, còn deleted files thì không.

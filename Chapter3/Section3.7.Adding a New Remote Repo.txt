@@ -1,0 +1,5 @@
+SECTION 3.7:
+
+Để thêm remote vào cho local repo:
+	git remote add upstream git-repo.url
+	

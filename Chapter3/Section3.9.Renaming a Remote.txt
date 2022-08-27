@@ -1,0 +1,7 @@
+SECTION 3.9:
+
+Cú pháp để push 1 nhánh lên remote là:
+	git push <remote_name> <branch_name>
+
+Có thể đặt tên nhánh mà mình muốn push lên trên remote:
+	git push <remote_name> <branch_name>:<remote_branch_name>

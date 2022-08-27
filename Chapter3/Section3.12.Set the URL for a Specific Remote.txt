@@ -1,0 +1,4 @@
+SECTION 3.12:
+
+Để thay đổi URL của 1 remote:
+	git remote set-url <remote-name> <URL>

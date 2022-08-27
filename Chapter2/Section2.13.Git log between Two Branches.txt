@@ -1,0 +1,5 @@
+SECTION 2.13:
+
+Nếu muốn xem những commit xuất hiện trên branch này mà không xuất hiện trên branch kia, tức để bỏ qua những commit mà 2 nhánh cùng chung sử dụng:
+	git log master..foo
+	--> Sẽ show ra những commit mà xuất hiện trên nhánh foo mà không xuất hiện trên nhánh master

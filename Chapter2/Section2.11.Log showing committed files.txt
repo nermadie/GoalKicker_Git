@@ -1,0 +1,4 @@
+SECTION 2.11:
+
+Để xem những ai đã commit và commit bao nhiêu (mà không cần coi chi tiết những commit) sử dụng:
+	git log --stat

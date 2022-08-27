@@ -1,0 +1,5 @@
+SECTION 2.10:
+
+Để xem git log + git diff ta sử dụng git --patch hoặc git -p:
+	VD: git log --patch
+		git log -p

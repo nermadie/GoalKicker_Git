@@ -1,0 +1,6 @@
+SECTION 3.10:
+
+Để đổi tên remote sử dụng git remote rename:
+	git remote rename <old> <new>
+	VD: git remote rename origin destination
+	

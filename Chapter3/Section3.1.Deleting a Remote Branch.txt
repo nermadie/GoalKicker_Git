@@ -1,0 +1,8 @@
+CHAPTER 3: REMOTE
+SECTION 3.1:
+
+Để xoá 1 nhánh remote trên Git:
+	+ --delete
+		git push [remote-name] --delete [branch-name]
+	+or (push nothing into remote branch)
+		git push [remote-name] :[branch-name]

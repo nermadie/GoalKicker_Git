@@ -1,0 +1,5 @@
+SECTION 2.12:
+
+Sử dụng git show để xem thông tin của 1 commit:
+	 git show 48c83b3
+	 git show HEAD

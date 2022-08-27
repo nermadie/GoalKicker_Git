@@ -1,0 +1,30 @@
+SECTION 2.9:
+
+Để xem lại những commit trong khoảng thời gian:
+	git log --after '3 days ago'
+	Hoặc 
+	git log --after 2022-08-23
+
+Có thể sử dụng --since (alias của --after)
+	git log --since '3 days ago'
+	
+Ngoài ra thì --before và --until cũng sử dụng tương tự nhưng ngược lại
+
+Có thể filter logs bởi author:
+	git log --author=<authorname>
+	
+REFERENCE:
+--since=<date>
+--after=<date>
+Show commits more recent than a specific date.
+
+--since-as-filter=<date>
+Show all commits more recent than a specific date. This visits all commits in the range, rather than stopping at the first commit which is older than a specific date.
+
+--until=<date>
+--before=<date>
+Show commits older than a specific date.
+
+--author=<pattern>
+--committer=<pattern>
+Limit the commits output to ones with author/committer header lines that match the specified pattern (regular expression). With more than one --author=<pattern>, commits whose author matches any of the given patterns are chosen (similarly for multiple --committer=<pattern>).

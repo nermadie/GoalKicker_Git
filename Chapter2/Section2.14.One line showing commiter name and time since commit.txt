@@ -1,0 +1,4 @@
+SECTION 2.14:
+
+git log --oneline --decorate --source --pretty=format:'"%Cblue %h %Cgreen %ar %Cblue %an
+%C(yellow) %d %Creset %s"' --all --graph

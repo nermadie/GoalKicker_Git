@@ -1,0 +1,11 @@
+SECTION 3.8:
+
+Để tạo 1 nhánh mới và checkout nhanh sử dụng:
+	git checkout -b foo
+	
+Có thể set riêng 1 upstream cho branch đó (bth nếu chưa có set upstream thì 1 nhánh không thể push lên với câu lệnh git push được):
+	git push --set-upstream origin foo
+	git push -u origin foo
+	--> git sẽ vừa tạo liên kết giữa foo và origin/foo và sẽ lưu lại upstream này để git push lần sau
+	
+* Lưu ý: git branch -u phải liên kết với 1 nhánh đã có trên remote

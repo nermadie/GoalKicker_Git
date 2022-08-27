@@ -1,0 +1,10 @@
+SECTION 3.11:
+
+Để xem thông tin về remote:
+	git remote show origin
+	+ Có thể xem remote tuy nhiên không query tới đây(ko up to date):
+		git remote show origin -n
+
+Để xem url của remote:
+	git config --get remote.origin.url
+	git remote get-url origin

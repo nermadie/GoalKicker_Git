@@ -1,0 +1,28 @@
+SECTION 2.8:
+
+Để xem những thay đổi trong 1 vài dòng xác định trong 1 file xác định:
+	git log -L <start>,<end>:<file>
+
+Để xem những thay đổi trong 1 function của 1 file xác định:
+	git log -L:<funcname>:<file>
+
+REFERENCE:
+-L<start>,<end>:<file>
+-L:<funcname>:<file>
+Trace the evolution of the line range given by <start>,<end>, or by the function name regex <funcname>, within the <file>. You may not give any pathspec limiters. This is currently limited to a walk starting from a single revision, i.e., you may only give zero or one positive revision arguments, and <start> and <end> (or <funcname>) must exist in the starting revision. You can specify this option more than once. Implies --patch. Patch output can be suppressed using --no-patch, but other diff formats (namely --raw, --numstat, --shortstat, --dirstat, --summary, --name-only, --name-status, --check) are not currently implemented.
+
+<start> and <end> can take one of these forms:
+
+number
+
+If <start> or <end> is a number, it specifies an absolute line number (lines count from 1).
+
+/regex/
+
+This form will use the first line matching the given POSIX regex. If <start> is a regex, it will search from the end of the previous -L range, if any, otherwise from the start of file. If <start> is ^/regex/, it will search from the start of file. If <end> is a regex, it will search starting at the line given by <start>.
+
++offset or -offset
+
+This is only valid for <end> and will specify a number of lines before or after the line given by <start>.
+
+If :<funcname> is given in place of <start> and <end>, it is a regular expression that denotes the range from the first funcname line that matches <funcname>, up to the next funcname line. :<funcname> searches from the end of the previous -L range, if any, otherwise from the start of file. ^:<funcname> searches from the start of file. The function names are determined in the same way as git diff works out patch hunk headers (see Defining a custom hunk-header in gitattributes[5]).

@@ -1,0 +1,11 @@
+SECTION 3.2:
+
+Để xem những remote đang được kết nối với local repo sử dụng:
+	+ Để xem chi tiết:
+		git remote -v == git remote --verbose
+	+ Để xem ngắn gọn (Chỉ show tên của remote)
+		git remote
+
+Để thay đổi remote URL:
+	git remote set-url origin https://github.com/username/repo2.git
+	# Change the 'origin' remote's URL

@@ -1,0 +1,6 @@
+SECTION 3.3:
+
+Giống như bài trước để xem những remote đang liên kết với repo này:
+	git remote -v
+	git remote --verbose
+	git remote

@@ -1,0 +1,11 @@
+SECTION 3.5:
+
+Giả dụ rằng bạn đã có setup upstream (remote, VD: origin)
+	git fetch remote-name
+	git merge remote-name/branch-name
+
+Để rút gọn câu lệnh như trên ta sử dụng pull:
+	git pull [remote-name] [branch-name]
+	
+Nếu thay thế merge bằng rebase ta sử dụng:
+	git pull --rebase [remote-name] [branch-name]

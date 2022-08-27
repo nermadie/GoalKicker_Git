@@ -1,0 +1,4 @@
+SECTION 3.14:
+
+Có thể sử dung git remote set-url để đổi remote repo khác:
+	git remote set-url <remote_name> <remote_repo_URL>

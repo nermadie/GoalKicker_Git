@@ -1,0 +1,7 @@
+SECTION 3.6:
+
+Để truy vấn với remote repo mà không phải clone hay fetch trước (Mà chỉ cần kết nối remote đến repo đó)
+	git ls-remote
+
+REFERENCE:
+https://git-scm.com/docs/git-ls-remote.html

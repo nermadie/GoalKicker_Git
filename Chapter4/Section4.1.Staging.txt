@@ -1,6 +1,6 @@
 CHAPTER 4: STAGING
 SESSION 4.1:
-
+asdfl
 Để thêm file vào trong trạng thái staged:
 	git add
 	+ Thêm toàn bộ các file:

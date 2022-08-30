@@ -1,0 +1,27 @@
+SECTION 4.3:
+
+Để xem trước những thay đổi của các file trước khi add vào trong staged:
+	git add -p
+	git add --patch
+	
+Sau khi gõ lệnh này thì sẽ mở ra 1 dấu nhắc lệnh tương tác (interactive prompt) cho phép bạn nhìn thấy những thay đổi của file đó và quyết định sẽ xử lý file đó như thế nào.
+
+*Hunk ở đây được mô tả là thay đổi của 1 line hoặc vài line liền kề nhau trong 1 file
+
+Stage this hunk [y,n,q,a,d,/,s,e,?]?
+	+y : staged this hunk
+	+n : do not staged this hunk
+	+q : quit->Do not staged this hunk or any of the remaining hunk
+	+a : stage this hunk and all later hunks in the file
+	+d : do not stage this hunk or any of the later hunks in the file
+	+g : select a hunk to go
+	+/ : search for a hunk matching the given regex
+	+j : leave this hunk undecided, see next undecided hunk
+	+J : leave this hunk undecided, see next hunk
+	+k : leave this hunk undecided, see previous undecided hunk
+	+K : leave this hunk undecided, see previous hunk
+	+s : split the current hunk into smaller hunks
+	+e : manually edit the current hunk
+	+? : print hunk help
+	
+Có thể vào git add -p bằng git add --interactive và chọn patch

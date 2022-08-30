@@ -3,3 +3,4 @@ SECTION 4.2:
 Để unstaged file trong trạng thái staged:
 	git reset <filePath>
 	git restore --staged <filePath>
+  asldfjl

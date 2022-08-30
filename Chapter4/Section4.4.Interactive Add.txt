@@ -1,0 +1,29 @@
+SECTION 4.4:
+
+Nếu muốn add file vào staged 1 cách chi tiết ta có thể dùng git add interactive interface 
+	git add --interactive
+	git add -i
+	
+Có rất nhiều graphical commit tools cho Git (VD: ta có thể sử dụng git gui), nó sẽ dễ dàng hơn là sử dụng cmd
+	git gui
+	
+Tác dụng:
+	+ Nếu bạn có 1 vài thay đổi mà bị nhập nhằng, bạn muốn chia những thay đổi đó ra làm nhiều commit
+	+ Nếu ở giữa interactive rebase và muốn chia một commit rất lớn ra
+	
+Có thể chọn từ 1-8 hoặc letter (s, u, r, a, p, d, q, h), trong đó:
+	+status: Cho ra output giống như phần đầu sau khi gõ git add -i
+	+update: có thể chọn những chỉ số của đầu những diff để staged file vào trong stage, hoặc dùng chỉ số âm để restore ngay trong phần update. Enter(rỗng) để quay lại tab chính
+		VD: Update>>1
+			--> Add file ứng với chỉ số 1 vào stage
+			Update>>-1
+			--> Restore file ứng với chỉ số 1 ra khỏi stage
+	
+	+revert: revert file trong staged ra lại trạng thái modified
+		VD: Revert>>1, Revert>>-1 tương tự Update
+	+add untracked: Cho phép đưa file đang ở trạng thái untrack vào stage
+		VD: Add Untracked>>1, Add Untracked>>-1 tương tự
+	+patch: đưa những modified file vào trong trạng thái patch để xem xét các hunk.
+	+diff: Hiển thị xem những thay đổi sẽ được commit của file đã được add vào trong stage. (Chọn file để xem diff)
+		VD: Review diff>>1, Review diff>>-1, tương tự
+	+quit, help.

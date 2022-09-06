@@ -1,0 +1,8 @@
+SECTION 4.7:
+
+Để xoá 1 file trong working directory đồng thời stage trạng thái bị rm của file đó:
+	git rm <filename>
+Để đưa 1 file đã commit ra lại trạng thái untrack:
+	git rm --cached <filename>
+	
+*git rm khác với rm là git rm sẽ cho file bị xoá vào trạng thái staged luôn

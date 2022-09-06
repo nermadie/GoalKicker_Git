@@ -3,5 +3,5 @@ SECTION 3.4:
 Để xoá 1 nhánh là local copies của nhánh đã bị xoá trên remote (tức là đã sử dụng git push --delete):
 	git fetch [remote-name] --prune
 	
-Để "tỉa" hết những nhánh đã bị xoá đi ở remote sử dụng --all:
+Để "tỉa"(prune) hết những nhánh đã bị xoá đi ở remote sử dụng --all:
 	git fetch --all --prune

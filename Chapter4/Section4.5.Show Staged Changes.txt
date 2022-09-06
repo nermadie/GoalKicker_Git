@@ -1,0 +1,4 @@
+SECTION 4.5:
+
+Để show những hunks (thay đổi) đã staged cho commit:
+	git diff --cached

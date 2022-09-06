@@ -1,0 +1,18 @@
+CHAPTER 5: Ignoring Files and Folders
+SECTION 5.1:
+
+Ta có thể bỏ qua một vài file và thư mục để mặc định không bị tracking bởi git bằng .gitignore file
+
+.gitignore căn bản chứa những file và thư mục được sinh ra trong quá trình build và runtime. .gitignore thường chứa:
+  + temporary resources
+  + local configuration
+  + files containing secret information
+.gitignore sẽ áp dụng cho toàn bộ các file mà cùng chung thư mục cũng như recursively cho các file và thư mục con chứa trong các thư mục này
+**Nếu .gitignore chứa trong thư mục con thì các file và thư mục ở top level sẽ không được áp dụng
+
+Khi mà file hoặc thư mục được ignored, nó sẽ:
+  - Không bị track bởi git
+  - Không được report bởi command git status hoặc git diff
+  - Không được staged khi gọi git add .
+
+.gitignore được viết trên glob file patterns

@@ -16,3 +16,33 @@ Khi mà file hoặc thư mục được ignored, nó sẽ:
   - Không được staged khi gọi git add .
 
 .gitignore được viết trên glob file patterns
+
+gitignore có thể được autogen qua tool:
+https://www.toptal.com/developers/gitignore
+
+1 Cách khác để ignore file và folder:
+  -Bth thì .gitignore sẽ được commit chung với các file khác. Nếu muốn ignore một vài file mà không phải tạo .gitignore, ta có vài option:
+    + Edit file .git/info/exclude file (sử dụng cú pháp tương tự .gitignore). Rule sẽ được áp dụng trong phạm vi repo đó.
+    + Setup 1 global .gitignore mà sẽ apply cho toàn bộ repo
+  -Ngoài ra, thì có thể ignore local changes để track file mà không phải thay đổi global git configuration bằng:
+    + git update-index --skip-worktree [<file>...]
+    --> Cho những thay đổi nhỏ
+    + git update-index --assume-unchanged [<file>...]
+    --> ...
+    Đọc thêm:
+      https://git-scm.com/docs/git-update-index
+      https://stackoverflow.com/questions/13630849/git-difference-between-assume-unchanged-and-skip-worktree/13631525#13631525
+
+Xoá files đã bị ignored:
+ -Sử dụng git clean:
+  + git clean -Xn #Xem danh sách các files đang bị ignored
+  + git clean -Xf #Xoá những files vừa mới displayed
+  + Những options có thể sử dụng với git clean:
+    -> -d: 
+    -> -f/--force: 
+    -> -i/--interactive: clean với interactive mode
+    -> -n/--dry-run: Show danh sách sẽ bị remove nếu sử dụng git clean <options>
+    -> -q/--quiet: Im lặng, không đưa ra thông báo xoá files thành công mà chỉ đưa ra những files xoá đi bị lỗi
+    -> -e <pattern>/--exclude=<pattern>: Sử dụng trường hợp ngoại lệ để loại 1 vài file không mong muốn bị xoá đi theo rule giống như gitignore
+    -> -x: Không sử dụng ignore rule như bình thường (tuy nhiên vẫn sử dụng rule nếu có -e đi kèm). -x sẽ bao gồm những file untracked, sử dụng tương tự git restore hoặc git reset để xoá đi những file sinh ra trong quá trình build
+    -> -X: Chỉ xoá những files bị ignored bới git.

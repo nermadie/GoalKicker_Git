@@ -1,0 +1,20 @@
+SECTION 5.3:
+Để cho một exception cho .gitignore. VD: ìgnore toàn bộ file .txt ngoại trừ file important.txt
+Ta viết thêm vào file .gitignore:
+  ^.txt
+  !important.txt
+
+Nếu file muốn đặt exception đã bị ignore 1 folder. VD:
+  folder/
+  !folder/*.txt
+  -> Tất cả các file vẫn bị ignored
+Để đặt exception cho *.txt, ta thêm:
+  !folder/       -> Exception cho câu lệnh folder/ 
+  folder/*       -> Đặt rule cho toàn bộ file chứ không phải ignore thư mục 
+  !folder/*.txt  -> Exception như bình thường
+
+--> Đơn giản có thể hiểu là ignore bằng folder thì phải exception cho folder, không thể đặt exception bằng file vì có thể git không đọc file trong folder đó khiến cho git không hiểu ý muốn của exception
+
+Để đặt exception cho dạng file !important.txt (có dấu ! ở đầu tên file) có 2 cách:
+  !!important.txt
+  \!important.txt

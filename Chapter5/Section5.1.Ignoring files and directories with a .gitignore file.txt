@@ -38,11 +38,12 @@ Xoá files đã bị ignored:
   + git clean -Xn #Xem danh sách các files đang bị ignored
   + git clean -Xf #Xoá những files vừa mới displayed
   + Những options có thể sử dụng với git clean:
-    -> -d: 
-    -> -f/--force: 
+    -> -d: Mặc định những folder sẽ không được liệt kê trong git clean thì khi thêm -d sẽ có thể xoá cả folder(recursively xoá cả bên trong thư mục)
+    -> -f/--force: git clean không cho phép xoá ngay mà khi muốn xoá phải thêm -f vào.
     -> -i/--interactive: clean với interactive mode
     -> -n/--dry-run: Show danh sách sẽ bị remove nếu sử dụng git clean <options>
     -> -q/--quiet: Im lặng, không đưa ra thông báo xoá files thành công mà chỉ đưa ra những files xoá đi bị lỗi
     -> -e <pattern>/--exclude=<pattern>: Sử dụng trường hợp ngoại lệ để loại 1 vài file không mong muốn bị xoá đi theo rule giống như gitignore
     -> -x: Không sử dụng ignore rule như bình thường (tuy nhiên vẫn sử dụng rule nếu có -e đi kèm). -x sẽ bao gồm những file untracked, sử dụng tương tự git restore hoặc git reset để xoá đi những file sinh ra trong quá trình build
     -> -X: Chỉ xoá những files bị ignored bới git.
+  **Lưu ý:+ git clean chỉ đọc đến những folder đã được commit tức nếu tạo 1 folder/file mới lồng trong folder mới khác thì git clean sẽ không show ra được mà chỉ show ra thư mục mới ngoài cùng

@@ -1,0 +1,7 @@
+SECTION 5.4:
+Để tạo 1 global .gitignore cho toàn bộ repo trên pc:
+  git config --global core.excludesfile <Path_To_Global_gitignore_file>
+
+Có một vài quy tắc:
+  ->Nếu trong repo có sẵn local .gitignore thì local .gitignore sẽ được ưu tiên.
+  ->Nếu muốn đồng bộ thì phải up cả file .g

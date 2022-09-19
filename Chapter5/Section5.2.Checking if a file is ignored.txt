@@ -1,0 +1,10 @@
+SECTION 5.2:
+Để check xem file có bị ignored bởi git không ta sử dụng git check-ignore
+  cat .gitignore
+  ->*.o
+  git check-ignore example.o README.md
+  ->example.o
+
+Cách trên chỉ dùng để check cho 1 số file được nhập vào index. Để list ra toàn bộ các file thì có thể sử dụng:
+  git status --ignored
+  -> git status + thông tin files bị ignored

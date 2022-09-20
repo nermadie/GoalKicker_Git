@@ -1,0 +1,4 @@
+SECTION 5.9:
+Nếu ta không chắc phải áp dụng rule nào cho repo của mình thì có thể tham khảo templates .gitignore của các đường dẫn sau:
+  https://github.com/github/gitignore
+  https://www.toptal.com/developers/gitignore

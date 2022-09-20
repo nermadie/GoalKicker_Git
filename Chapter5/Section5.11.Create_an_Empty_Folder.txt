@@ -1,0 +1,8 @@
+SECTION 5.11:
+Thông thường để tối ưu hiệu suất thì git sẽ không track những thư mục trống (git chỉ track files và những thư mục đi kèm với files đó)
+
+Tuy nhiên nếu ta muốn track 1 thư mục trống thì ta có thể thêm 1 file vào trong thư mục đó để git có thể nhận diện. Có 2 cách để xử lý:
+->Cách 1 : tạo file .gitkeep bên trong thư mục đó
+->Cách 2 : tạo 1 file bất kỳ bên trong thư mục đó
+
+.gitkeep là file mặc định để track các thư mục trống trong git. .gitkeep sẽ là 1 file trống và không có dữ liệu

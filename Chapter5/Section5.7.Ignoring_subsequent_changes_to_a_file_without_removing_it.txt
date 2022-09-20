@@ -1,0 +1,2 @@
+SECTION 5.7:
+Giống như SECTION 5.5 ta có thể sử dụng --assume-unchanged để ignore changes trong 1 file mà vẫn tracking file đó

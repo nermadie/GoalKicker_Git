@@ -1,0 +1,12 @@
+SECTION 5.6:
+.gitignore có thể ignore files locally tuy nhiên nó được thiết kế để committed cùng với repository và chia sẻ với các contributors khác. Hoặc global .gitignore thì sẽ lại áp dụng rules cho toàn bộ các repo khác
+
+-> Còn 1 cách để ignore locally khác đó là chỉnh sửa file .git/info/exclude bên trong repo
+  Ví dụ:
+  # these files are only ignored on this repo
+  # these rules are not shared with anyone
+  # as they are personal 
+  gtk_tests.py
+  gui/gtk/tests/*
+  localhost
+-> Vì nằm trong .git nên rules này sẽ không được push lên remote

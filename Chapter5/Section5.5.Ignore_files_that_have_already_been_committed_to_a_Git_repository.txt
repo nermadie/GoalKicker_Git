@@ -1,0 +1,37 @@
+SECTION 5.5:
+Nếu bạn đã add 1 file vào trong Git repository và muốn git không tracking file này nữa -> đưa về trạng thái untracked
+  git rm --cached <file>
+Chú ý có --cached để phân biệt với git rm <file> sẽ xoá luôn file ra khỏi woking directory
+
+Chú ý rằng, nếu có ai đó pulls những thay đổi sau khi rm --cached 1 file thì file đó sẽ bị xoá luôn khỏi woking directory của người đó(Vẫn lưu trong lịch sử)
+
+**Có thể làm cho git bỏ qua thay đổi của 1 file nhưng vẫn tracking file đó:
+1/--> git update-index --assume-unchanged <file>
+  *Cách này sẽ khiến cho git status không quan tâm đến thay đổi của file này và sẽ hiện working tree clean. Và nếu commit các thay đổi của file khác để tạo 1 commit mới và sau khi git reset --hard thì thay đổi trong file đó sẽ bị mất vĩnh viễn.
+
+  *Điều tương tự xảy ra khi git pull(force -> git reset --hard origin/<tên nhánh>) hoặc git stash --> Tất cả thay đổi trong file có flag --assume-unchanged sẽ bị mất
+
+  *Khi pull bình thường thì sẽ có cảnh báo để tránh mất dữ liệu
+  
+  *flags của file bình thường là "H", của file có --assume-unchanged là "h"
+  
+  *Xem trạng thái của các files có --assume-unchanged:
+  $ git ls-files -v
+  hoặc
+  $ git ls-files -v|grep '^h'
+
+  git reset --hard vẫn sẽ revert lại những thay đổi trong file -assume-unchanged nhưng không đưa file về trạng thái --no-assume-unchanged
+  Tuy nhiên git reset --hard về những commit khác commit hiện tại thì --assume-unchanged sẽ được remove
+  Tương tự với git pull từ khi chưa được --assume-unchanged và push lên thì khi pull về sẽ remove --assume-unchanged khi mà file đó trên upstream bị thay đổi
+2/ -->git update-index --skip-worktree <file>
+  Sử dụng khi không muốn đưa những thay đổi trong file này tracking bởi git và cũng không muốn git động vào file này. --skip-worktree sẽ bảo vệ những thay đổi trong file hơn rất nhiều so với --assume-unchanged vì sẽ không bị mất dữ liệu khi git stash hoặc git pull cùng với đó là flags của --skip-worktree sẽ không bị mất trong quá trình xử lý.
+
+  git stash sẽ vẫn stash mà không ảnh hưởng đến file --skip-worktree.
+
+  Flag của --skip-worktree là S
+  
+**==>Cả 2 cách đề không thể pull khi mà file đã bị thay đổi ở local. Tuy nhiên nếu file không bị thay đổi ở local mà bị thay đổi ở upstream thì có thể pull về (--assume-unchanged sẽ bị mất còn --skip-worktree thì không)
+
+Có thể làm việc nhiều nhánh 1 lúc:
+  https://dominhhai.github.io/vi/2017/09/git-worktree-multi-branchs/#:~:text=git%20worktree%20cho%20ph%C3%A9p%20ta,ra%20t%E1%BB%AB%20m%C3%A3%20ngu%E1%BB%93n%20blog.
+

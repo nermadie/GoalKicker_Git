@@ -1,0 +1,7 @@
+SECTION 5.12:
+Ta có thể list toàn bộ các file đang bị ignored cùng với git status:
+  git status --ignored
+  
+Có thể add một file đã bị ignored bằng:
+  git add -f <filename>
+  ->.gitignore vẫn sẽ ignored file đó trong những lần commit tiếp theo.

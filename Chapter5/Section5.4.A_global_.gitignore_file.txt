@@ -4,4 +4,6 @@ SECTION 5.4:
 
 Có một vài quy tắc:
   ->Nếu trong repo có sẵn local .gitignore thì local .gitignore sẽ được ưu tiên.
-  ->Nếu muốn đồng bộ thì phải up cả file .g
+  ->nếu muốn đồng bộ thì phải up cả file .gitignore global lên. Hoặc ít nhất là đính kèm nó để đồng bộ với các máy khác
+
+File này sẽ sử dụng tốt đối với các files thuộc nền tảng, hệ điều hành khác nhau. VD: OSX .DS_Store, Windows Thumbs.db,...

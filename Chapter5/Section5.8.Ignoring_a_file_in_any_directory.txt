@@ -1,0 +1,12 @@
+SECTION 5.8:
+Để ignore toàn bộ file có tên foo.txt, thì trong .gitignore ta thêm tên của file đó vào:
+  foo.txt # matches all files 'foo.txt' in any directory
+
+Để ignore toàn bộ file có tên foo.txt chỉ trong 1 folder và các thư mục con của folder đó:
+  -->VD ignore foo.txt trong bar/
+
+  bar/**/foo.txt # matches all files 'foo.txt' in 'bar' and all subdirectoriesy
+
+
+Hoặc đơn giản, ta chỉ cần tạo 1 file .gitignore bên trong thư mục bar/ thì cũng sẽ đạt được kết quả tương tự. Trong file đó viết:
+  foo.txt

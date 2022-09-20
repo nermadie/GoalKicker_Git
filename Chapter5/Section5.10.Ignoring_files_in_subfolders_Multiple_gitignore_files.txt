@@ -1,0 +1,16 @@
+SECTION 5.10:
+VD ta có 1 repo structure như sau:
+    examples/
+      output.log
+    src/
+      <files not shown>
+      output.log
+    README.md
+
+Ta biết file examples/output.log là 1 file quan trong cần giữ lại, còn file src/output.log là file rác được sinh ra trong quá trình build
+
+Để ko track file đó ta có thể đưa đường dẫn chính xác đến file đó vào trong .gitignore:
+  # /.gitignore
+  src/output.log
+
+Hoặc ta có thể tạo 1 file .gitignore bên trong thư mục src/ và ignore output.log là được.

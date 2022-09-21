@@ -17,7 +17,7 @@ Chú ý rằng, nếu có ai đó pulls những thay đổi sau khi rm --cached 
   
   *Xem trạng thái của các files có --assume-unchanged:
   $ git ls-files -v
-  hoặc
+  hoặc chỉ liệt kê file đang trong trạng thái assume-unchanged
   $ git ls-files -v|grep '^h'
 
   git reset --hard vẫn sẽ revert lại những thay đổi trong file -assume-unchanged nhưng không đưa file về trạng thái --no-assume-unchanged

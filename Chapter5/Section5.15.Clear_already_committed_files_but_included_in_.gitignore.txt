@@ -1,0 +1,13 @@
+SECTION 5.15:
+Nhiều lúc 1 file đã được commit vào trong git những sau đó vì 1 lý do nào đó lại được add vào trong .gitignore. Thành ra mặc dù được add vào trong .gitignore tuy nhiên lại vẫn sẽ được track trong git như bình thường.
+
+Để fix this problem, thì có thể xoá tracking toàn bộ files rồi add lại vào trong git sau đó có thể tạo commit mới hoặc amend để xoá 1 file khỏi bị tracking bởi git.
+
+# Remove everything from the index (the files will stay in the file system)
+$ git rm -r --cached .
+# Re-add everything (they'll be added in the current state, changes included)
+$ git add .
+# Commit, if anything changed. You should see only deletions
+$ git commit -m 'Remove all files that are in the .gitignore'
+# Update the remote
+$ git push origin master

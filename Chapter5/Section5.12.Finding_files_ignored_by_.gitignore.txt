@@ -4,4 +4,9 @@ Ta có thể list toàn bộ các file đang bị ignored cùng với git status
   
 Có thể add một file đã bị ignored bằng:
   git add -f <filename>
-  ->.gitignore vẫn sẽ ignored file đó trong những lần commit tiếp theo.
+  ->.gitignore vẫn sẽ còn tên của file đó bên trong tuy nhiên thì file đó về sau sẽ không bị ignored nữa. Bởi vì gitignore chỉ áp dụng với file untracked.
+
+Mặc định khi list các file bị ignored thì nếu thư mục được add vào bên trong .gitignore thì khi list ra chỉ có tên thư mục. Để biết những file bị ignore trong thư mục đó thì phải sử dụng:
+  ->git status --ignored --untracked-files=all
+  hoặc (vì mặc định không truyền tham số thì --untracked-files sẽ bằng all luôn nên ta -u cho gọn)
+  ->git status --ignored -u

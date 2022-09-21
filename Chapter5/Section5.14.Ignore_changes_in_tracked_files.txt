@@ -1,0 +1,34 @@
+SECTION 5.14:
+
+.gitignore và .git/info/exclude chỉ áp dụng cho untracked files
+
+Để gán ignore flag cho tracked file, sử dụng câu lệnh update-index:
+  git update-index --skip-worktree <file>
+  git update-index --no-skip-worktree <file>
+  ->Để liệt kê những files đang bị skip-worktree
+  git ls-files -v | grep ^[hsS]
+
+Tương tự ta cũng có thể sử dụng --assume-unchanged như những chương trước
+
+Khi mà --assume-unchanged flag được gán cho 1 files, người dùng sẽ cam kết với git sẽ không thay đổi file đó và cho Git ngầm định là file trong working tree là giống với trong index. Git sẽ báo lỗi khi file đó bị thay đổi nếu người dùng pull dữ liệu từ trên upstream xuống và nhận thấy có conflict trong file đó, người dùng sẽ phải handle conflict thủ công trước khi pull lại. Và sau khi pull thành công thì flag --assume-unchanged sẽ bị mất.
+
+Trong khi đó --skip-worktree sẽ hữu dụng trong trường hợp nhắc git là không bao giờ đụng vào file đó, phiên bản ở index sẽ không cần sửa đổi mà chỉ sửa file đó ở locally. Sử dụng --skip-worktree sẽ không bị mất khi thực hiện bất cứ thao tác nào tuy nhiên khi pull và gặp conflict thì vẫn phải handle thủ công trước khi pull lại 1 lần nữa như --assume-unchanged
+
+Cả 2 đều sẽ không xuất hiện trong git add và không bị commit nếu có thay đổi trong file. Skip-worktree sẽ ưu tiên hơn khi cả 2 cờ được gán vào cho 1 file
+
+* Khi gọi git ls-files -v:
+-t
+This option (-t) identifies the file status with the following tags 
+(followed by a space) at the start of each line:
+
+H   cached
+S   skip-worktree
+M   unmerged
+R   removed/deleted
+C   modified/changed
+K   to be killed
+?   other
+-v
+Similar to -t, but use lowercase letters for files that are marked as assume unchanged 
+
+Vì vậy nếu 1 file được set cả assume-unchanged và skip-worktree thì sẽ hiển thị là 's' nếu gọi git ls-files -v

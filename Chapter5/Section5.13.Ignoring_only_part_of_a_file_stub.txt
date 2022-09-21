@@ -1,0 +1,35 @@
+SECTION 5.13:
+*KHÔNG NÊN THỬ*
+Có thể ignore 1 phần trong file mà vẫn tracking toàn bộ phần còn lại của file đó
+
+Ta có thể làm cho Git "unsee" những dòng đó. Chúng cũng sẽ không xuất hiện trên git diffs.
+
+Giả dụ ta có 1 file "file1.c":
+    struct settings s;
+    s.host = "localhost";
+    s.port = 5653;
+    s.auth = 1;
+    s.port = 15653; // NOCOMMIT
+    s.debug = 1; // NOCOMMIT
+    s.auth = 0; // NOCOMMIT
+
+  -->Ta mong muốn những dòng //NOCOMMIT không được tracking bởi Git
+  B1: Tạo 1 "nocommit" filter bằng cách thêm những dòng sau và git config (.git/config):
+      [filter "nocommit"]
+      clean=grep -v NOCOMMIT
+  B2: Thêm vào(tạo file) .git/info/attributes hoặc .gitmodules hoặc .gitattributes (thư mục ngoài cùng):
+      file1.c filter=nocommit
+  ==>Những dòng có NOCOMMIT sẽ bị ẩn khỏi git
+
+CHÚ Ý:
+  -> Sử dụng filter sẽ làm chậm quá trình xử lý, đặc biệt là trên Windows
+  -> Những dòng bị ignore có nguy cơ bị xoá đi khi Git update. Có thể ngăn chặn điều này bằng smudge filter, nhưng sẽ khá là khoai.
+  -> Không thử trên Windows
+
+**//CLEAN và SMUDGE:
+https://developers.redhat.com/articles/2022/02/02/protect-secrets-git-cleansmudge-filter#clean_and_smudge_your_git_repository_
+https://git-scm.com/book/en/v2/Customizing-Git-Git-Attributes
+
+Khi thêm file vào trong index (staging area) với git add, file match trong .gitattributes sẽ đi qua clean filter, còn khi pulling back vào trong working directory với git pull, những files đó sẽ được filter với smudge filter.
+    Working directory => Clean => Index
+    Index => Smudge => Working directory
